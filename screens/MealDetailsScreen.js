@@ -1,25 +1,32 @@
-import { View, Text, Image, StyleSheet, ScrollView, Button } from 'react-native';
-import { useLayoutEffect } from 'react';
-import List from '../components/MealDetail/List';
-import Subtitle from '../components/MealDetail/Subtitle';
-import MealDetails from '../components/MealDetails';
-import { MEALS } from '../data/dummy-data';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  ScrollView,
+  Button,
+} from "react-native";
+import { useLayoutEffect } from "react";
+import List from "../components/MealDetail/List";
+import Subtitle from "../components/MealDetail/Subtitle";
+import MealDetails from "../components/MealDetails";
+import { MEALS } from "../data/dummy-data";
 
 function MealDetailScreen({ route, navigation }) {
   const mealId = route.params.mealId;
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
   function headerButtonPressHandler() {
-    console.log('Button Pressed')
+    console.log("Button Pressed");
   }
   //using this layout effect we can set same configuration as same as app.js options component. SO her we use setIptions
-  useLayoutEffect(()=>{
+  useLayoutEffect(() => {
     navigation.setOption({
-      headerRight: ()=>{
-        return <Button title='Tap me' on onPress={headerButtonPressHandler}></Button>
-      }
-    })
-  },[navigation, headerButtonPressHandler]);
+      headerRight: () => {
+        return <Button title="Tap me" onPress={headerButtonPressHandler} />;
+      },
+    });
+  }, [navigation, headerButtonPressHandler]);
 
   return (
     <ScrollView style={styles.rootContainer}>
@@ -47,26 +54,26 @@ export default MealDetailScreen;
 
 const styles = StyleSheet.create({
   rootContainer: {
-    marginBottom: 32
+    marginBottom: 32,
   },
   image: {
-    width: '100%',
+    width: "100%",
     height: 350,
   },
   title: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 24,
     margin: 8,
-    textAlign: 'center',
-    color: 'white',
+    textAlign: "center",
+    color: "white",
   },
   detailText: {
-    color: 'white',
+    color: "white",
   },
   listOuterContainer: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   listContainer: {
-    width: '80%',
+    width: "80%",
   },
 });
