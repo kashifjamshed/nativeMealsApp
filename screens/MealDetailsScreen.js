@@ -21,7 +21,7 @@ function MealDetailScreen({ route, navigation }) {
   }
   //using this layout effect we can set same configuration as same as app.js options component. SO her we use setIptions
   useLayoutEffect(() => {
-    navigation.setOption({
+    navigation.setOptions({
       headerRight: () => {
         return <Button title="Tap me" onPress={headerButtonPressHandler} />;
       },
