@@ -2,7 +2,7 @@ import Category from '../models/category';
 import Meal from '../models/meal';
 
 export const CATEGORIES = [
-  new Category('c1', 'Meal With Aliya', '#f5428d'),
+  new Category('c1', 'Meal With', '#f5428d'),
   new Category('c2', 'Quick & Easy', '#f54242'),
   new Category('c3', 'Hamburgers', '#f5a442'),
   new Category('c4', 'German', '#f5d142'),
